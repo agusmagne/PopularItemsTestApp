@@ -106,6 +106,8 @@ class ShopListViewModel @Inject constructor(
 
     private fun getPopularItemsERROR(error: Throwable) {
         Log.d(TAG, "getPopularItemsERROR: ${error.localizedMessage}")
+        Log.d(TAG, "getPopularItemsERROR: ${error.cause}")
+        Log.d(TAG, "getPopularItemsERROR: ${error.message}")
         Toast.makeText(application, PopularItemsEndpoints.POPULAR_ITEMS, Toast.LENGTH_LONG).show()
     }
 
