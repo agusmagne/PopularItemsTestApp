@@ -77,10 +77,14 @@ class ShopListViewModel @Inject constructor(
     }
 
     private fun isStringPartiallyEqual(name: String, inputString: String): Boolean {
-        return name.toLowerCase(Locale.ROOT)
-            .substring(0, inputString.length) == inputString.toLowerCase(
-            Locale.ROOT
-        )
+        return if (name.length >= inputString.length) {
+            name.toLowerCase(Locale.ROOT)
+                .substring(0, inputString.length) == inputString.toLowerCase(
+                Locale.ROOT
+            )
+        } else {
+            false
+        }
 
     }
 
