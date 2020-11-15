@@ -109,7 +109,8 @@ class ShopListViewModel @Inject constructor(
         val newItem = Item(name = name, amount = amount)
         allCartList.add(newItem)
         GlobalScope.launch(Dispatchers.IO) {
-            database.itemDao().insertAllItems(newItem)
+            val newIds = database.itemDao().insertAllItems(newItem)
+            allCartList.last().id = newIds[0]
         }
     }
 

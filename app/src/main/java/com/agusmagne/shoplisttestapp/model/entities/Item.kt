@@ -7,7 +7,7 @@ import com.google.gson.annotations.SerializedName
 
 @Entity
 class Item(
-    @PrimaryKey(autoGenerate = true) val id: Int = 0,
+    @PrimaryKey(autoGenerate = true) var id: Long = 0,
     @SerializedName("item_name") @ColumnInfo(name = "NAME") var name: String = "",
     @ColumnInfo(name = "AMOUNT") var amount: Int = 0,
     var available: String = UNAVAILABLE

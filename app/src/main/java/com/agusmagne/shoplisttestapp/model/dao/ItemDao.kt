@@ -13,7 +13,7 @@ interface ItemDao {
     fun deleteItem(item: Item)
 
     @Insert
-    fun insertAllItems(vararg item: Item)
+    fun insertAllItems(vararg item: Item): Array<Long>
 
     @Update(entity = Item::class)
     fun updateItem(item: Item)
